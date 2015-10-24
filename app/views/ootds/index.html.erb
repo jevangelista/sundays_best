@@ -1,0 +1,20 @@
+<h1>Ootds Index</h1>
+
+<div>
+There are currently <%= @ootds.length %> created.
+</div>
+
+<br>
+
+<div class='list-group'>
+<% @ootds.each do |ootd| %>
+	
+	<div>
+		Trend: <%= link_to ootd.trend, "/ootds/#{ootd.id}"%>  <br>
+		Caption: <%= ootd.caption %> <br>
+	
+	</div>
+	<br>
+
+<% end %>
+</div>
