@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023190130) do
+ActiveRecord::Schema.define(version: 20151024062243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 20151023190130) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "ootd_items", ["item_id"], name: "index_ootd_items_on_item_id", using: :btree
+  add_index "ootd_items", ["ootd_id"], name: "index_ootd_items_on_ootd_id", using: :btree
+
   create_table "ootds", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "ootd_image"
@@ -49,6 +52,9 @@ ActiveRecord::Schema.define(version: 20151023190130) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "taggings", ["ootd_id"], name: "index_taggings_on_ootd_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -68,4 +74,8 @@ ActiveRecord::Schema.define(version: 20151023190130) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "ootd_items", "items"
+  add_foreign_key "ootd_items", "ootds"
+  add_foreign_key "taggings", "ootds"
+  add_foreign_key "taggings", "tags"
 end
