@@ -18,7 +18,8 @@ users = User.create([
 		username: '@jamie_eula',
 		password: "1234",
 		gender: 'female',
-		city: 'San Francisco'
+		city: 'San Francisco',
+		user_image: '/images/ootds/jam1.png'
 	},
 	{
 		name: 'Beau Monroe',
@@ -42,7 +43,8 @@ users = User.create([
 		username: '@thedressedchest',
 		password: "1234",
 		gender: 'male',
-		city: 'Daly City'
+		city: 'Daly City',
+		user_image: '/images/ootds/chest1.png'
 	}, 
 	{
 		name: 'Christine Pazcoguin',
@@ -56,6 +58,7 @@ users = User.create([
 ])
 
 ootds_jamie = User.find_by_name("Jamie Evangelista").ootds.create([
-	{trend: "modern", caption: "so modern chic"},
-	{trend: "biker", caption: "vroom vroom"}
+	{ootd_image: "/images/ootds/jam2.png", trend: "boho", caption: "barcelona style"},
+	{ootd_image: "/images/ootds/jam3.png", trend: "mod", caption: "in nature"},
+	{ootd_image: "/images/ootds/jam4.png", trend: "mod", caption: "spring pastels"},
 	])
