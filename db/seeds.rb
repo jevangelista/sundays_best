@@ -6,7 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# User.find_by_name("Jamie Evangelista").ootds.create({trend: "vintage", caption: "very classy"})
+
 User.destroy_all
+Ootd.destroy_all
 
 users = User.create([
 	{
@@ -25,5 +28,34 @@ users = User.create([
 		gender: 'male',
 		city: 'San Francisco'
 	},
+	{
+		name: 'John Evangelista',
+		email: 'john@ga.co',
+		username: '@thejohn_ed',
+		password: "1234",
+		gender: 'male',
+		city: 'Daly City'
+	},
+	{
+		name: 'Rainier Pazcoguin',
+		email: 'rainier@ga.co',
+		username: '@thedressedchest',
+		password: "1234",
+		gender: 'male',
+		city: 'Daly City'
+	}, 
+	{
+		name: 'Christine Pazcoguin',
+		email: 'christine@ga.co',
+		username: '@christeeney',
+		password: "1234",
+		gender: 'male',
+		city: 'South San Francisco'
+	}
 
 ])
+
+ootds_jamie = User.find_by_name("Jamie Evangelista").ootds.create([
+	{trend: "modern", caption: "so modern chic"},
+	{trend: "biker", caption: "vroom vroom"}
+	])
