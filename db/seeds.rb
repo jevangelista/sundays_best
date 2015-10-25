@@ -1,12 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # User.find_by_name("Jamie Evangelista").ootds.create({trend: "vintage", caption: "very classy"})
+#User.create({name: 'Rainier Pazcoguin', email: 'rainier@ga.co', username: '@thedressedchest', password:'1234', gender: 'male', city: 'Daly City', user_img: File.new("public/images/ootds/chest1.png")})
+
 
 User.destroy_all
 Ootd.destroy_all
@@ -19,7 +14,7 @@ users = User.create([
 		password: "1234",
 		gender: 'female',
 		city: 'San Francisco',
-		user_image: '/images/ootds/jam1.png'
+		user_img: File.new("public/images/ootds/jam2.png")
 	},
 	{
 		name: 'Beau Monroe',
@@ -44,7 +39,7 @@ users = User.create([
 		password: "1234",
 		gender: 'male',
 		city: 'Daly City',
-		user_image: '/images/ootds/chest1.png'
+		user_img: File.new("public/images/ootds/chest2.png")
 	}, 
 	{
 		name: 'Christine Pazcoguin',
