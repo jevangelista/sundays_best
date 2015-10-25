@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 	end
 
  	def create
-	    user_params = params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :gender, :city)
+	    user_params = params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :gender, :city, :user_img)
 	    @user = User.create(user_params)
 
 	    login(@user) # <-- login the user

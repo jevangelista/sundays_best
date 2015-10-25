@@ -1,6 +1,6 @@
-Sign Up
+<h1>Sign Up</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, url: users_path, html: { multipart: true } do |f| %>
   <div>
     <%= f.text_field :name, placeholder: "Name" %>
   </div>
@@ -21,10 +21,16 @@ Sign Up
   </div>
   <div>
     <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+  </div>
 
-  </div><br>
+  <h3>Upload User Photo: </h3>
+  <div>
+     <%= f.file_field :user_img %>
+  </div>
+
+  <br>
 
   <div>
-  <%= f.submit "Sign Up" %>
+  <%= f.submit "Sign Up", class: "btn btn-primary" %>
   </div>
 <% end %> 
