@@ -17,7 +17,7 @@ class OotdsController < ApplicationController
 	def create
 		ootd_params = params.require(:ootd).permit(:trend, :caption)
 		@ootd = Ootd.create(ootd_params)
-			redirect_to "/ootds/#{ootd.id}", flash: { success: "Successfully uploaded new ootd!" }
+			redirect_to @ootd, flash: { success: "Successfully uploaded new ootd!" }
 
 	end
 
@@ -39,7 +39,7 @@ class OotdsController < ApplicationController
 	    ootd.update_attributes(updated_attributes)
 
 	    #redirect to show
-	    redirect_to "/ootds/#{ootd.id}", flash: { success: "Successfully updated new ootd!" }  # <-- go to show
+	    redirect_to "/ootds/#{ootd.id}"  # <-- go to show
 	end
 
 	def destroy
@@ -48,15 +48,6 @@ class OotdsController < ApplicationController
 		ootd.destroy
 		redirect_to "/ootds"
 	end
-
-
-# def destroy
-#     id = params[:id]
-#     user = User.find(id)
-#     user.destroy
-#     redirect_to "/users"
-# end
-
 
 
 end

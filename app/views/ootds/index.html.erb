@@ -1,9 +1,16 @@
 <h1>Ootds Index</h1>
 
+<br/>
+
 <div>
 There are currently <%= @ootds.length %> created.
 </div>
 
+<br>
+
+<div>
+<%= link_to "New OOTD",  new_ootd_path, class: "btn btn-default btn-primary" %>
+</div>
 <br>
 
 <div class='list-group'>
