@@ -1,4 +1,5 @@
 class OotdsController < ApplicationController
+	before_action :find_ootd, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@ootds = Ootd.all
@@ -6,48 +7,49 @@ class OotdsController < ApplicationController
 	end
 
 	def show
- 		@ootd = Ootd.find(params[:id])
- 		render :show
  	end
 
 	def new
-		@ootd = Ootd.new
+		@ootd = current_user.ootds.build
 	end
 
 	def create
-		ootd_params = params.require(:ootd).permit(:trend, :caption)
-		@ootd = Ootd.create(ootd_params)
+		@ootd = current_user.ootds.build(ootd_params)
+
+		if @ootd.save
 			redirect_to @ootd, flash: { success: "Successfully uploaded new ootd!" }
+		else
+			render :new
+		end
 
 	end
-
 
 	def edit
-		id = params[:id]
-		@ootd = Ootd.find(id)
-		render :edit
 	end
 
-
 	def update
-	    ootd_id = params[:id]
-	    ootd = Ootd.find(ootd_id)
-
-	    # get updated data
-	    updated_attributes = params.require(:ootd).permit(:trend, :caption)
-	    # update the creature
-	    ootd.update_attributes(updated_attributes)
-
-	    #redirect to show
-	    redirect_to "/ootds/#{ootd.id}"  # <-- go to show
+	    if @ootd.update(ootd_params)
+			redirect_to @ootd, flash: { success: "Successfully uploaded new ootd!" }
+		else
+			render :edit
+		end
 	end
 
 	def destroy
-		id = params[:id]
-		ootd = Ootd.find(id)
-		ootd.destroy
+		@ootd.destroy
 		redirect_to "/ootds"
 	end
+
+	private
+
+	def ootd_params
+		params.require(:ootd).permit(:trend, :caption)
+	end
+
+	def find_ootd
+		@ootd = Ootd.find(params[:id])
+	end
+
 
 
 end

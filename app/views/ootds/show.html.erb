@@ -1,5 +1,6 @@
 <h1>Trend: <%= @ootd.trend %></h1>
 <p>Caption: <%=@ootd.caption %></p>
+<p>Submitted by: <%=@ootd.user.username %></p>
 
 <%= link_to "Back",  ootds_path %>
 <%= link_to "Edit",  edit_ootd_path %>
