@@ -15,7 +15,9 @@ There are currently <%= @ootds.length %> created.
 
 <div class='list-group'>
 <% @ootds.each do |ootd| %>
-	
+	<div>
+		<%= image_tag ootd.ootd_img.url(:medium) %>
+	</div>
 	<div>
 		Trend: <%= link_to ootd.trend, "/ootds/#{ootd.id}"%>  <br>
 		Caption: <%= ootd.caption %> <br>

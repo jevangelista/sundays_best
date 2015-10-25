@@ -43,7 +43,7 @@ class OotdsController < ApplicationController
 	private
 
 	def ootd_params
-		params.require(:ootd).permit(:trend, :caption)
+		params.require(:ootd).permit(:trend, :caption, :ootd_img)
 	end
 
 	def find_ootd

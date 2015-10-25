@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025020227) do
+ActiveRecord::Schema.define(version: 20151025074230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,12 @@ ActiveRecord::Schema.define(version: 20151025020227) do
     t.string   "trend"
     t.string   "caption"
     t.integer  "likes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "ootd_img_file_name"
+    t.string   "ootd_img_content_type"
+    t.integer  "ootd_img_file_size"
+    t.datetime "ootd_img_updated_at"
   end
 
   create_table "taggings", force: :cascade do |t|

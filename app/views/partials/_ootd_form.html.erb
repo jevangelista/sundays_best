@@ -1,7 +1,20 @@
+<%= form_for @ootd, url: ootds_path, html: { multipart: true } do |f| %>
+  <div>
+    <%= f.text_field :trend, placeholder: "Trend", class: "form-control" %>
+  </div>	
+  <div>
+    <%= f.text_field :caption, placeholder: "Caption", class: "form-control" %>
+  </div>
+
+   	<h3>Upload User Photo: </h3>
+  <div>
+  	 <%= f.file_field :ootd_img, class: "form-control" %>
+  </div>
+  <br>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
 
 
-<%= simple_form_for @ootd, html: { multipart: true } do |f| %>
-  <%= f.input :trend, input_html: {class: 'form-control'}, error: 'Trend is mandatory, please specify one' %>
-  <%= f.input :caption, input_html: {class: 'form-control'} %>
-  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
+
+
