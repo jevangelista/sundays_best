@@ -20,9 +20,9 @@ class UsersController < ApplicationController
 
  	def show
  		@user = User.find(params[:id])
+ 		@ootds = current_user.ootds.all
  		render :show
  	end
-
 
 
 end
