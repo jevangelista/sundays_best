@@ -1,4 +1,9 @@
 <h1> Welcome, <%= @user.name %>!  </h1>
+
+<div>
+<%= link_to "New OOTD",  new_ootd_path, class: "btn btn-default btn-primary" %>
+</div>
+
 <div>
   Username: <%= @user.username %>  <br/>
   City: <%= @user.city %> <br/>

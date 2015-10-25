@@ -16,6 +16,7 @@
 	    <% if current_user %>
 
 	      <%= button_to "Logout", logout_path, method: "get", class: "btn btn-default navbar-right navbar-btn" %>
+	       <%= link_to "Profile", current_user, method: "get", class: "btn btn-default navbar-right navbar-btn" %>
 
 	    <% else %>
 		  
