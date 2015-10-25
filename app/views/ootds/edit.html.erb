@@ -1,10 +1,14 @@
 <!-- edit pin form -->
-<h1>Edit OOTD </h1>
-<div>
-	<%= render template: "partials/_ootd_form.html.erb" %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+	<h1>Edit OOTD </h1>
+	<div>
+		<%= render template: "partials/_ootd_form.html.erb" %>
+	</div>
+
+	<br>
+
+	<%= link_to "Cancel",  ootds_path %>
+  </div>
 </div>
-
-<br>
-
-<%= link_to "Cancel",  ootds_path %>
 
