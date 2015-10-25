@@ -2,3 +2,5 @@
 <p>Caption: <%=@ootd.caption %></p>
 
 <%= link_to "Back",  ootds_path %>
+<%= link_to "Edit",  edit_ootd_path %>
+<%= link_to "Delete",  ootd_path, method: :delete, data: {confirm: "Are you sure?"} %>
