@@ -1,5 +1,6 @@
 <div>
 <%= link_to "New OOTD",  new_ootd_path, class: "btn btn-default btn-primary" %>
+<%= link_to "OOTD Gallery",  ootds_path, class: "btn btn-default btn-primary" %>
 </div>
 
 
@@ -19,17 +20,29 @@
 
 <h2>Your Contributed OOTDS </h2>
 <br><br>
-<div class='list-group'>
-<% @ootds.each do |ootd| %>
-	<div>
-		<%= image_tag ootd.ootd_img.url(:medium) %>
-	</div>
-	<div>
-		Trend: <%= link_to ootd.trend, "/ootds/#{ootd.id}"%>  <br>
-		Caption: <%= ootd.caption %> <br>
-	
-	</div>
-	<br>
-
-<% end %>
+<div id="pins" class="transitions-enabled">
+	<% @ootds.each do |ootd| %>
+		<div class="box panel panel-default">
+			<%= image_tag ootd.ootd_img.url(:medium) %>
+			<div class="panel-body">
+				Trend: <%= link_to ootd.trend, "/ootds/#{ootd.id}"%> 
+				Caption: <%= ootd.caption %> 
+			</div>
+		</div>
+	<% end %>
 </div>
+
+<script>
+	$(function(){
+
+	  var $container = $('#pins');
+
+	  $container.imagesLoaded(function(){
+	    $container.masonry({
+	      itemSelector: '.box',
+	      isFitWidth: true
+	    });
+	  });
+	 });
+
+</script>
