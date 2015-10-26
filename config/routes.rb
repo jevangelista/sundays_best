@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   #ootds routes
-  resources :ootds
+  resources :ootds do
+  	member do
+  		put "like", to: "ootds#upvote"
+  	end
+  end
 
 
 end

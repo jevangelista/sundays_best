@@ -16,6 +16,7 @@
  *= require_tree .
  */
  
+
 body {
 	padding-top:50px;
 }
@@ -26,4 +27,8 @@ body {
 
 h1.ootd-gallery {
 	text-align: center;
+}
+
+.heart-icon {
+	width: 20px;
 }

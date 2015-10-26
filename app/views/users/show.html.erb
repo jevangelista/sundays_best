@@ -25,8 +25,8 @@
 		<div class="box panel panel-default">
 			<%= image_tag ootd.ootd_img.url(:medium) %>
 			<div class="panel-body">
-				Trend: <%= link_to ootd.trend, "/ootds/#{ootd.id}"%> 
-				Caption: <%= ootd.caption %> 
+				<%= link_to ootd.trend, "/ootds/#{ootd.id}"%> <br/>
+				<%= ootd.caption %> 
 			</div>
 		</div>
 	<% end %>

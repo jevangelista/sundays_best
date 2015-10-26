@@ -1,4 +1,5 @@
 class Ootd < ActiveRecord::Base
+	acts_as_votable
 	belongs_to :user
 	has_many :taggings
 	has_many :tags, through: :taggings, dependent: :destroy

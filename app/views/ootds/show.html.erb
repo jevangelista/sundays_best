@@ -1,10 +1,30 @@
-<div>
-	<%= image_tag @ootd.ootd_img.url(:medium) %>
-</div>
-<h1>Trend: <%= @ootd.trend %></h1>
-<p>Caption: <%=@ootd.caption %></p>
-<p>Submitted by: <%=@ootd.user.username %></p>
+<div class="col-md-8 col-md-offset-2">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= image_tag @ootd.ootd_img.url(:medium) %>
+		</div>
+		<div class="panel-body">
+			<h1><%= @ootd.trend %></h1>
+			<p><%=@ootd.caption %></p>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+					<div class="container-fluid">
+					Submitted by: <%=@ootd.user.username %>
+						<div class="col-md-6 btn-group pull-right">
 
-<%= link_to "Back",  ootds_path %>
-<%= link_to "Edit",  edit_ootd_path %>
-<%= link_to "Delete",  ootd_path, method: :delete, data: {confirm: "Are you sure?"} %>
+							<%= link_to like_ootd_path, method: :put, class: "btn btn-default" do %>
+									<%= image_tag "/images/ootds/heart-icon.png", class: "heart-icon" %>
+									<%= @ootd.get_upvotes.size %>
+							<% end %>
+
+
+							<%= link_to "Back",  ootds_path, class: "btn btn-default" %>
+							<%= link_to "Edit",  edit_ootd_path, class: "btn btn-default"  %>
+							<%= link_to "Delete",  ootd_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"  %>
+						</div>
+					</div>
+			</div>
+		</div>
+	<div>
+</div>

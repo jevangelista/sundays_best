@@ -1,5 +1,5 @@
 class OotdsController < ApplicationController
-	before_action :find_ootd, only: [:show, :edit, :update, :destroy]
+	before_action :find_ootd, only: [:show, :edit, :update, :destroy, :upvote]
 
 	def index
 		@ootds = Ootd.all
@@ -38,6 +38,11 @@ class OotdsController < ApplicationController
 	def destroy
 		@ootd.destroy
 		redirect_to "/ootds"
+	end
+
+	def upvote
+		@ootd.upvote_by current_user
+		redirect_to :back
 	end
 
 	private
