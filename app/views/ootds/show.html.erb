@@ -18,10 +18,12 @@
 									<%= @ootd.get_upvotes.size %>
 							<% end %>
 
-
+						
 							<%= link_to "Back",  ootds_path, class: "btn btn-default" %>
-							<%= link_to "Edit",  edit_ootd_path, class: "btn btn-default"  %>
-							<%= link_to "Delete",  ootd_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"  %>
+							<% if @ootd.user == current_user %>
+								<%= link_to "Edit",  edit_ootd_path, class: "btn btn-default"  %>
+								<%= link_to "Delete",  ootd_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"  %>
+							 <% end %>
 						</div>
 					</div>
 			</div>
