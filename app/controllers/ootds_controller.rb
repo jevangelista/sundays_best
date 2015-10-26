@@ -7,6 +7,8 @@ class OotdsController < ApplicationController
 	end
 
 	def show
+		@ootds = Ootd.all
+		@items = Item.all
  	end
 
 	def new

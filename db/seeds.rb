@@ -61,3 +61,4 @@ ootds_rainier = User.find_by_name("Rainier Pazcoguin").ootds.create([
 	])
 
 
+

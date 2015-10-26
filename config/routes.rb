@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'items/new'
+
+  get 'items/create'
+
+  get 'items/show'
+
   root to: 'welcome#splash'
 
   #users routes
