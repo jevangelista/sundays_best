@@ -33,3 +33,13 @@ h1.ootd-gallery {
 	width: 20px;
 }
 
+.caro-pan {
+  /**/
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-left: 0px;
+  background-position: center;
+  background-size: cover;
+
+}
