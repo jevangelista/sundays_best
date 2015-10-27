@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'items/new'
-
-  get 'items/create'
-
-  get 'items/show'
-
   root to: 'welcome#splash'
 
   #users routes
@@ -18,10 +12,16 @@ Rails.application.routes.draw do
 
   #ootds routes
   resources :ootds do
+    resources :items
   	member do
   		put "like", to: "ootds#upvote"
   	end
   end
+
+  #items routes
+  resources :items
+
+  get "/outfit/generate", to: "items#generate"
 
 
 end

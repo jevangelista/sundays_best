@@ -23,6 +23,7 @@
 							<% if @ootd.user == current_user %>
 								<%= link_to "Edit",  edit_ootd_path, class: "btn btn-default"  %>
 								<%= link_to "Delete",  ootd_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"  %>
+								<%= link_to "Add Items",  new_ootd_item_path(@ootd), class: "btn btn-default"  %>
 							 <% end %>
 						</div>
 					</div>
@@ -33,11 +34,13 @@
 		
 		<div class="panel-body">
 			<div class="row">
-				<h3 style="text-align: center"> Shop This OOTD</h3>
+				<h3 style="text-align: center"> Shop Similar Items</h3>
 				<div id="pins" class="transitions-enabled">
 					<% @items.each do |item| %>
+
 						<div class="box panel panel-default">
 							<%= item.name %>
+							<%= image_tag item.item_img.url(:medium) %>
 						</div>
 					<% end %>
 				</div>

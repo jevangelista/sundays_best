@@ -1,2 +1,9 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1><%= @item.name %></h1>
+	<div class="panel-body">
+		<%= image_tag @item.item_img.url(:medium) %>
+	</div>
+	<div class="panel-footer">
+		<p><%= @item.purchase_link %></p>
+	</div>
+
+<%= link_to "Back",  ootds_path %>
