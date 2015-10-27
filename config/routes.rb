@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   	end
   end
 
-  #items routes
+  #items routess
   resources :items
 
   get "/outfit/generate", to: "items#generate"

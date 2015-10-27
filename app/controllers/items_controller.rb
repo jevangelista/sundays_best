@@ -23,10 +23,15 @@ class ItemsController < ApplicationController
   end
 
   def generate
-    @items = Item.all
     @item_tops = Item.where(item_category: "Top").order("RANDOM()").first
     @item_bottoms = Item.where(item_category: "Bottom").order("RANDOM()").first
+
   end
+
+
+
+
+
 
 end
 
