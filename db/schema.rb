@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026203829) do
+ActiveRecord::Schema.define(version: 20151027234440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,16 @@ ActiveRecord::Schema.define(version: 20151026203829) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_ootd_items", force: :cascade do |t|
+    t.integer  "ootd_item_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "user_ootd_items", ["ootd_item_id"], name: "index_user_ootd_items_on_ootd_item_id", using: :btree
+  add_index "user_ootd_items", ["user_id"], name: "index_user_ootd_items_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -105,4 +115,6 @@ ActiveRecord::Schema.define(version: 20151026203829) do
   add_foreign_key "ootd_items", "ootds"
   add_foreign_key "taggings", "ootds"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "user_ootd_items", "ootd_items"
+  add_foreign_key "user_ootd_items", "users"
 end

@@ -1,12 +1,13 @@
 <%= form_for @ootd, url: ootds_path, html: { multipart: true } do |f| %>
   <div>
-    <%= f.text_field :trend, placeholder: "Trend", class: "form-control" %>
+    <p> Select Trend: </p>
+    <%= f.select :trend, [['Boho', 'boho'], ["Vintage", 'vintage'], ['Preppy', 'preppy'], ['Sporty', 'sporty'], ['Urban', 'urban'], ['Classic', 'classic'], ['Edgy', 'edgy'], ['Modern', 'modern'] ],{}, {:class => 'form-control'} %>
   </div>	
   <div>
     <%= f.text_field :caption, placeholder: "Caption", class: "form-control" %>
   </div>
 
-   	<h4>Upload Photo: </h4>
+   	<p>Upload Photo: </p>
   <div>
   	 <%= f.file_field :ootd_img, class: "form-control" %>
   </div>

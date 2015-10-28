@@ -3,7 +3,12 @@ class OotdsController < ApplicationController
 
 	def index
 		@ootds = Ootd.all
-		render :index
+		if params[:search]
+		    @ootds = Ootd.search(params[:search]).order("created_at DESC")
+		  	else
+		    @ootds = Ootd.all
+	 	end
+
 	end
 
 	def show

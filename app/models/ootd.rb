@@ -9,6 +9,10 @@ class Ootd < ActiveRecord::Base
 	has_attached_file :ootd_img, styles: { medium: "300x300>"}
   	validates_attachment_content_type :ootd_img, content_type: /\Aimage\/.*\Z/
 
+  	def self.search(search)
+	  where("trend LIKE ?", "%#{search}%") 
+	end
+
 	def all_tags=(names)
       self.tags = names.split(", ").map do |name|
       Tag.where(name: name.strip).first_or_create!
