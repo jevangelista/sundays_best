@@ -12,23 +12,26 @@ class OotdsController < ApplicationController
 	end
 
 	def show
-		@ootds = Ootd.all
-		@items = Item.all
+		@ootd_items = @ootd.ootd_items
  	end
 
 	def new
-		@ootd = current_user.ootds.build
+		@ootd = current_user.ootds.new
+		@ootd_item = @ootd.ootd_items.new
+		@item = @ootd_item.build_item
+		puts "this is hitting the ootds new controller"
+
 	end
 
 	def create
-		@ootd = current_user.ootds.build(ootd_params)
+		@ootd = current_user.ootds.create(ootd_params)
 
 		if @ootd.save
 			redirect_to @ootd, flash: { success: "Successfully uploaded new ootd!" }
 		else
 			render :new
 		end
-
+		puts "this is hitting the ootds create controller"
 	end
 
 	def edit
@@ -44,6 +47,7 @@ class OotdsController < ApplicationController
 
 	def destroy
 		@ootd.destroy
+		@ootd_items.destroy
 		redirect_to "/ootds"
 	end
 
@@ -55,7 +59,7 @@ class OotdsController < ApplicationController
 	private
 
 	def ootd_params
-		params.require(:ootd).permit(:trend, :caption, :ootd_img)
+		params.require(:ootd).permit(:trend, :caption, :ootd_img, ootd_items_attributes: [:id, :ootd_id, :item_id, items_attributes: [:id, :user_id, :item_image, :item_category, :name, :purchase_link, :item_img]])
 	end
 
 	def find_ootd

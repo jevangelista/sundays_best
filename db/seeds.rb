@@ -5,6 +5,7 @@
 
 User.destroy_all
 Ootd.destroy_all
+OotdItems.destroy_all
 Item.destroy_all
 
 users = User.create([

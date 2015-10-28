@@ -36,11 +36,11 @@
 			<div class="row">
 				<h3 style="text-align: center"> Shop Similar Items</h3>
 				<div id="pins" class="transitions-enabled">
-					<% @items.each do |item| %>
+					<% @ootd_items.each do |ootd_item| %>
 
 						<div class="box panel panel-default">
-							<%= item.name %>
-							<%= image_tag item.item_img.url(:medium) %>
+							<%= ootd_item.item.name %>
+							<%= image_tag ootd_item.item.item_img.url(:medium) %>
 						</div>
 					<% end %>
 				</div>

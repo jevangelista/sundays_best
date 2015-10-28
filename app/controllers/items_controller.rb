@@ -2,12 +2,12 @@ class ItemsController < ApplicationController
   
   def index
   	@items = Item.all
-	render :index
+	 render :index
   end
 
   def new
   	@item = Item.new
-	render :new
+	  render :new
   end
 
   def create
@@ -45,9 +45,6 @@ class ItemsController < ApplicationController
     @item_bottoms = Item.where(item_category: "Bottom").order("RANDOM()").first
 
   end
-
-
-
 
 
 
