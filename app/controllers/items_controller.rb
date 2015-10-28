@@ -12,9 +12,11 @@ class ItemsController < ApplicationController
 
   def create
 	item_params = params.require(:item).permit(:item_category, :name, :purchase_link, :item_img)
-    @item = Item.create(item_params)
+  @item = Item.create(item_params)
+  @ootd = Ootd.find(params[:ootd_id])
+  @ootd.items.push(@item)
 
-	redirect_to "/items/#{@item.id}"
+	redirect_to "/ootds", flash: { success: "Successfully uploaded new item!" }
   end
 
   def show
