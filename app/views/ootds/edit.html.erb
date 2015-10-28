@@ -1,58 +1,15 @@
-<!-- create ootd form -->
+<!-- edit ootd form -->
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-		<h1>Upload New OOTD </h1>
+		<h1>Edit OOTD </h1>
 		<div>
-			<%= form_for(@ootd) do |ootd_form| %>
-				  <div>
-				    <p> Select Trend: </p>
-				    <%= ootd_form.select :trend, [['Boho', 'boho'], ["Vintage", 'vintage'], ['Preppy', 'preppy'], ['Sporty', 'sporty'], ['Urban', 'urban'], ['Classic', 'classic'], ['Edgy', 'edgy'], ['Modern', 'modern'] ],{}, {:class => 'form-control'} %>
-				  </div>	
-				  <div>
-				    <%= ootd_form.text_field :caption, placeholder: "Caption", class: "form-control" %>
-				  </div>
+			<%= render template: "partials/_ootd_form.html.erb" %>
+		</div>
 
-				   	<p>Upload Photo: </p>
-				  <div>
-				  	 <%= ootd_form.file_field :ootd_img, class: "form-control" %>
-				  </div>
-				  <br>
+		<br>
 
-				  <%= ootd_form.fields_for :ootd_items do |ootd_item_form| %>
-				  		<%= ootd_item_form.hidden_field :ootd_id %>
-				  		<%= ootd_item_form.hidden_field :item_id %>
-
-						<div class="row">
-						  <div class="col-md-6 col-md-offset-3">
-						    <h1>Upload New OOTD Items </h1>
-						      <%= ootd_item_form.fields_for :ootd_items do |item_form| %>
-						          <div>
-						            <%= item_form.text_field :item_category, placeholder: "Category", class: "form-control" %>
-						          </div>  
-						          <div>
-						            <%= item_form.text_field :name, placeholder: "Name", class: "form-control" %>
-						          </div>
-						          <div>
-						            <%= item_form.text_field :purchase_link, placeholder: "Purchase Link", class: "form-control" %>
-						          </div>
-
-
-						            <h4>Upload Photo: </h4>
-						          <div>
-						             <%= item_form.file_field :item_img, class: "form-control" %>
-						          </div>
-						          <br>
-
-						          <%= item_form.submit "Submit", class: "btn btn-primary" %>
-
-						    <% end %>
-					 <% end %>
-			<% end %>
-					</div>
-
-					<br>
-
+		<%= link_to "Back",  ootds_path, class: "btn btn-default" %>
 
 	</div>
 </div>

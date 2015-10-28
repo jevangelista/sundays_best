@@ -29,6 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item = Item.find(params[:id])
     item_params = params.require(:item).permit(:item_category, :name, :purchase_link, :item_img)
       if @item.update(ootd_params)
       redirect_to @item

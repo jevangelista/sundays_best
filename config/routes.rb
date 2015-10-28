@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   	end
   end
 
-
+  get "/items", to: "items#index"
   get "/outfit/generate", to: "items#generate"
 
 

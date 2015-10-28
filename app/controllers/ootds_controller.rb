@@ -19,8 +19,6 @@ class OotdsController < ApplicationController
 		@ootd = current_user.ootds.new
 		@ootd_item = @ootd.ootd_items.new
 		@item = @ootd_item.build_item
-		puts "this is hitting the ootds new controller"
-
 	end
 
 	def create
@@ -31,7 +29,6 @@ class OotdsController < ApplicationController
 		else
 			render :new
 		end
-		puts "this is hitting the ootds create controller"
 	end
 
 	def edit
@@ -39,7 +36,7 @@ class OotdsController < ApplicationController
 
 	def update
 	    if @ootd.update(ootd_params)
-			redirect_to @ootd, flash: { success: "Successfully uploaded new ootd!" }
+			redirect_to ootd_path, flash: { success: "Successfully updated ootd!" }
 		else
 			render :edit
 		end
@@ -47,7 +44,6 @@ class OotdsController < ApplicationController
 
 	def destroy
 		@ootd.destroy
-		@ootd_items.destroy
 		redirect_to "/ootds"
 	end
 
@@ -59,7 +55,7 @@ class OotdsController < ApplicationController
 	private
 
 	def ootd_params
-		params.require(:ootd).permit(:trend, :caption, :ootd_img, ootd_items_attributes: [:id, :ootd_id, :item_id, items_attributes: [:id, :user_id, :item_image, :item_category, :name, :purchase_link, :item_img]])
+		params.require(:ootd).permit(:trend, :caption, :ootd_img)
 	end
 
 	def find_ootd
