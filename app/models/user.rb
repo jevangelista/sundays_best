@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 	has_many :user_ootd_items
 	has_many :ootd_items, through: :user_ootd_items
 
+
+
 	has_attached_file :user_img, styles: { medium: "300x300>"}
   	validates_attachment_content_type :user_img, content_type: /\Aimage\/.*\Z/
 
