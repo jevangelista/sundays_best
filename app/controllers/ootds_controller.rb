@@ -9,6 +9,12 @@ class OotdsController < ApplicationController
 		    @ootds = Ootd.all
 	 	end
 
+	 	  if params[:tag]
+		    @ootds = Ootd.tagged_with(params[:tag])
+		  else
+		    @ootds = Ootd.all
+		  end
+
 	end
 
 	def show
@@ -55,7 +61,7 @@ class OotdsController < ApplicationController
 	private
 
 	def ootd_params
-		params.require(:ootd).permit(:trend, :caption, :ootd_img)
+		params.require(:ootd).permit(:trend, :caption, :ootd_img, :all_tags)
 	end
 
 	def find_ootd
