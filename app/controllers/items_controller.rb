@@ -53,6 +53,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def favorite_index
+  end
+
 
   def generate
     @item_tops = Item.where(item_category: "Top").order("RANDOM()").first

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get "/items", to: "items#index"
   get "/outfit/generate", to: "items#generate"
+  get "/favorites", to: "items#favorite_index"
 
 
 end
