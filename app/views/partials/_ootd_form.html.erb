@@ -6,12 +6,17 @@
   <div>
     <%= f.text_field :caption, placeholder: "Caption", class: "form-control" %>
   </div>
-
+    <p>
+      <%= f.text_field :all_tags, placeholder: "Tags separated with comma", class: "form-control" %>
+    </p>
    	<p>Upload Photo: </p>
   <div>
   	 <%= f.file_field :ootd_img, class: "form-control" %>
   </div>
   <br>
+
+
+
 
   <%= f.submit "Submit", class: "btn btn-primary" %>
 

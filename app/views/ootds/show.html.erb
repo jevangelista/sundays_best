@@ -6,6 +6,7 @@
 		<div class="panel-body">
 			<h1><%= @ootd.trend %></h1>
 			<p><%=@ootd.caption %></p>
+			Tags: <%= raw tag_links(@ootd.all_tags)%>
 		</div>
 		<div class="panel-footer">
 			<div class="row">
