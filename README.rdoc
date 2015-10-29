@@ -1,4 +1,35 @@
 =Sunday's Best
 
+=== To get started:
+
+* bundle install
+* rake db:create
+* rake db:migrate
+* rails s
+* Check out player at localhost:3000
+
 === Overview:
 Sunday’s Best is a style inspiration and outfit generation app for classic everyday fashion. Share your classic style. Discover new dapper outfits. Find the best fashion inspiration.
+
+== Heroku Link 
+https://sundays-best.herokuapp.com/
+
+== Description
+Sunday’s Best is an outfit discovery app for classic everyday fashion. Share your classic style. Discover new quality outfits. Find the best fashion inspiration.
+
+
+== User Stories 
+https://docs.google.com/document/d/1wDd9sp9H0EEEJjj09k1KQ5wAh7KDo3zK13WJ2W60uqY/
+
+== Wireframes
+Check out my wireframe on Balsamiq [place URL here] 
+
+== Entity Relationship Diagram
+https://docs.google.com/presentation/d/1W0V0BWUt4l2Gi6XBlLOJt-ZlgltwwND1AeuszTGLU-k/edit#slide=id.p 
+
+== Technologies Used
+Ruby on Rails, Bootstrap, jQuery, Masonry, Heroku, Git/GitHub, BCrypt
+
+== Wishlist/Future Development
+In the future, I would like to implement an outfit generation feature. This feature would take items that you've favorited, show you a form that you could mix and match tops and bottoms, and save that generated outfit. I would also like to try implementing a What's Trending feature, which shows a data visualization of what is being tagged the most. I would use D3.js to show this. 
+
