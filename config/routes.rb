@@ -12,11 +12,12 @@ Rails.application.routes.draw do
 
   #ootds routes
   resources :ootds do
-    resources :items
-  	member do
-  		put "like", to: "ootds#upvote"
+    resources :items do
+      put :favorite, on: :member
   	end
   end
+
+ 
 
   get "/items", to: "items#index"
   get "/outfit/generate", to: "items#generate"

@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
 
   def show
   	@item = Item.find(params[:id])
+    @ootd = Ootd.find(params[:ootd_id])
     render :show
   end
 
@@ -28,20 +29,30 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def update
-    @item = Item.find(params[:id])
-    item_params = params.require(:item).permit(:item_category, :name, :purchase_link, :item_img)
-      if @item.update(ootd_params)
-      redirect_to @item
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @item.destroy
     redirect_to "/ootds"
   end
+
+  # Add and remove favorite recipes
+  # for current_user
+  def favorite
+    @item = Item.find(params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @item
+      redirect_to "/ootds", notice: 'Item was saved to your favorites!'
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@item)
+      redirect_to "/ootds", notice: 'Item was unsaved from your favorites!'
+
+    else
+      # Type missing, nothing happens
+      redirect_to "/ootds", notice: 'Nothing happened.'
+    end
+  end
+
 
   def generate
     @item_tops = Item.where(item_category: "Top").order("RANDOM()").first

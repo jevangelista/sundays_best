@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 	has_many :user_ootd_items
 	has_many :ootd_items, through: :user_ootd_items
 
+	has_many :favorite_items
+  	has_many :favorites, through: :favorite_items, source: :item
 
 
 	has_attached_file :user_img, styles: { medium: "300x300>"}
