@@ -1,15 +1,15 @@
 <!-- create ootd form -->
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-		<h1>Upload New OOTD </h1>
-		<div>
-			<%= render template: "partials/_ootd_form.html.erb" %>
+<div class="new-edit-ootd-form" class="ootd-font">
+	<div class="row">
+	  <div class="col-md-6 col-md-offset-3">
+			<h1 class="ootd-font">Upload New OOTD </h1>
+			<div>
+				<%= render template: "partials/_ootd_form.html.erb" %>
+			</div>
+
+			<br>
+
 		</div>
-
-		<br>
-
-		<%= link_to "Back",  ootds_path, class: "btn btn-default" %>
-
 	</div>
 </div>

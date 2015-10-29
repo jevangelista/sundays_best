@@ -55,15 +55,9 @@ class ItemsController < ApplicationController
 
   def favorite_index
     @favorites = current_user.favorites
+    @favorites_tops = current_user.favorites.where(item_category: "Top")
+    @favorites_bottoms = current_user.favorites.where(item_category: "Bottom")
   end
-
-
-  def generate
-    @item_tops = Item.where(item_category: "Top").order("RANDOM()").first
-    @item_bottoms = Item.where(item_category: "Bottom").order("RANDOM()").first
-
-  end
-
   
 
 

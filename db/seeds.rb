@@ -4,7 +4,7 @@
 
 
 User.destroy_all
-OotdItem.destroy_all
+OotdItem.delete_all
 Ootd.destroy_all
 Ootd.delete_all
 

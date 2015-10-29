@@ -1,16 +1,18 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-		<h1>Log In</h1>
+<div class="sign-in-page">
+	<div class="row">
+	  <div class="col-md-6 col-md-offset-3">
+			<h1 class="sign-in-font">Log In</h1>
 
-		<%= form_for @user, url: "/sessions", method: "post" do |f| %>
-		  <div>
-		    <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
-		  </div>
-		  <div>
-		    <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-		  </div>
-		  <br/>
-		  <%= f.submit "Log In", class: "btn btn-primary" %>
-		<% end %> 
-  </div>
+			<%= form_for @user, url: "/sessions", method: "post" do |f| %>
+			  <div>
+			    <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+			  </div>
+			  <div>
+			    <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+			  </div>
+			  <br/>
+			  <%= f.submit "Log In", class: "btn btn-primary" %>
+			<% end %> 
+	  </div>
+	</div>
 </div>
