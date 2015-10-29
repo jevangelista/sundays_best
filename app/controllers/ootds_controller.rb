@@ -49,6 +49,7 @@ class OotdsController < ApplicationController
 	end
 
 	def destroy
+		@ootd.ootd_items.destroy_all
 		@ootd.destroy
 		redirect_to "/ootds"
 	end
