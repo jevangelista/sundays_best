@@ -14,9 +14,10 @@
 
 	 	<!-- @user.present? -->
 	    <% if current_user %>
-
+	    
 	      <%= button_to "Logout", logout_path, method: "get", class: "btn btn-default navbar-right navbar-btn" %>
-
+	       <%= link_to "Profile", current_user, method: "get", class: "btn btn-default navbar-right navbar-btn" %>
+	        <%= link_to "OOTD Gallery", ootds_path, method: "get", class: "btn btn-default navbar-right navbar-btn" %>
 	    <% else %>
 		  
 	        <%= button_to "Login", sign_in_path, method: "get", class: "btn btn-default navbar-right navbar-btn" %>

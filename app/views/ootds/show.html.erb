@@ -1,0 +1,69 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<%= image_tag @ootd.ootd_img.url(:medium) %>
+		</div>
+		<div class="panel-body">
+			<h1><%= @ootd.trend %></h1>
+			<p><%=@ootd.caption %></p>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+					<div class="container-fluid">
+					Submitted by: <%=@ootd.user.username %>
+						<div class="col-md-6 btn-group pull-right">
+						
+							<%= link_to "Back",  ootds_path, class: "btn btn-default" %>
+							<% if @ootd.user == current_user %>
+								<%= link_to "Edit",  edit_ootd_path, class: "btn btn-default"  %>
+								<%= link_to "Delete",  ootd_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default"  %>
+								<%= link_to "Add Items",  new_ootd_item_path(@ootd), class: "btn btn-default"  %>
+							 <% end %>
+						</div>
+					</div>
+			</div>
+		</div>
+
+
+		
+		<div class="panel-body">
+			<div class="row">
+				<h3 style="text-align: center"> Shop Similar Items</h3>
+				<div id="pins" class="transitions-enabled">
+					<% @ootd_items.each do |ootd_item| %>
+
+						<div class="box panel panel-default" >
+							<%= ootd_item.item.name %>
+							<%= image_tag ootd_item.item.item_img.url(:medium) %>
+								<% if current_user %>
+								  <%= link_to "Favorite",   favorite_ootd_item_path(@ootd, ootd_item.item_id, type: "favorite"), method: :put, class: "btn btn-danger" %>
+								  <%= link_to "Unfavorite", favorite_ootd_item_path(@ootd, ootd_item.item_id, type: "unfavorite"), method: :put, class: "btn btn-danger" %>
+								 <% end %>
+
+
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		
+
+
+	<div>
+</div>
+
+
+<script>
+	$(function(){
+
+	  var $container = $('#pins');
+
+	  $container.imagesLoaded(function(){
+	    $container.masonry({
+	      itemSelector: '.box',
+	      isFitWidth: true
+	    });
+	  });
+	 });
+
+</script>

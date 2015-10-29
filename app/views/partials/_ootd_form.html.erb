@@ -1,0 +1,22 @@
+<%= form_for @ootd do |f| %>
+  <div>
+    <p> Select Trend: </p>
+    <%= f.select :trend, [['Boho', 'boho'], ["Vintage", 'vintage'], ['Preppy', 'preppy'], ['Sporty', 'sporty'], ['Urban', 'urban'], ['Classic', 'classic'], ['Edgy', 'edgy'], ['Modern', 'modern'] ],{}, {:class => 'form-control'} %>
+  </div>	
+  <div>
+    <%= f.text_field :caption, placeholder: "Caption", class: "form-control" %>
+  </div>
+
+   	<p>Upload Photo: </p>
+  <div>
+  	 <%= f.file_field :ootd_img, class: "form-control" %>
+  </div>
+  <br>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+
+<% end %>
+
+
+  </div>
+</div>

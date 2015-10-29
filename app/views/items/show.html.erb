@@ -1,0 +1,10 @@
+<h1><%= @item.name %></h1>
+	<div class="panel-body">
+		<%= image_tag @item.item_img.url(:medium) %>
+	</div>
+	<div class="panel-footer">
+		<p><%= @item.purchase_link %></p>
+	</div>
+	<h1> Hello! </h1>
+
+<%= link_to "Back",  ootds_path %>
