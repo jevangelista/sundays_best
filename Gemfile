@@ -13,6 +13,8 @@ gem 'masonry-rails', '~> 0.2.4'
 gem 'jquery-turbolinks'
 #gem for voting
 gem 'acts_as_votable', '~> 0.10.0'
+#gem to add jQuery UI
+gem 'jquery-ui-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
