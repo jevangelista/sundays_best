@@ -1,14 +1,36 @@
-<h1>Favorites page </h1>
+<div class="container-fluid">
+    <h1 class="ootd-item-panels">Favorites page </h1>
 
-<div id="pins" class="transitions-enabled">
-	<% @favorites.each do |favorite| %>
-		<div class="box panel panel-default">
-			<%= favorite.item_category %>
-			<div class="panel-body">
-				<%= favorite.name %> <br>
-				<%= image_tag favorite.item_img.url(:medium) %>
-				
-			</div>
-		</div>
-	<% end %>
+   
+        <div class="ootd-item-panels">
+               <div id="pins" class="transitions-enabled">
+                <% @favorites.each do |favorite| %>
+                    <div class="box panel panel-default">
+                            <%= favorite.name %>
+                        <div class="panel-body">
+                        
+                            <%= image_tag favorite.item_img.url(:medium) %>
+                            
+                        </div>
+                    </div>
+                <% end %>
+                </div>
+        </div>
+
+
 </div>
+
+<script>
+    $(function(){
+
+      var $container = $('#pins');
+
+      $container.imagesLoaded(function(){
+        $container.masonry({
+          itemSelector: '.box',
+          isFitWidth: true
+        });
+      });
+     });
+
+</script>

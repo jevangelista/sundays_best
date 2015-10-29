@@ -17,11 +17,9 @@ Rails.application.routes.draw do
   	end
   end
 
-
   get "/items", to: "items#index"
-  get "/outfit/generate", to: "items#generate"
   get "/favorites", to: "items#favorite_index"
-  get 'tags/:tag', to: 'ootds#index', as: "tag"
+  get 'tags/:tag', to: 'ootds#tag', as: "tag"
 
 
 end

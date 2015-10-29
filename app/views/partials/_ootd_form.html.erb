@@ -1,6 +1,8 @@
+<div class="container-fluid">
+
 <%= form_for @ootd do |f| %>
   <div>
-    <p> Select Trend: </p>
+    <h3 class="ootd-font"> Select Trend: </h3>
     <%= f.select :trend, [['Boho', 'boho'], ["Vintage", 'vintage'], ['Preppy', 'preppy'], ['Sporty', 'sporty'], ['Urban', 'urban'], ['Classic', 'classic'], ['Edgy', 'edgy'], ['Modern', 'modern'] ],{}, {:class => 'form-control'} %>
   </div>	
   <div>
@@ -9,19 +11,17 @@
     <p>
       <%= f.text_field :all_tags, placeholder: "Tags separated with comma", class: "form-control" %>
     </p>
-   	<p>Upload Photo: </p>
+   	<h2 class="ootd-font">Upload Photo: </h2>
   <div>
   	 <%= f.file_field :ootd_img, class: "form-control" %>
   </div>
   <br>
 
-
-
-
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <%= link_to "Back",  ootds_path, class: "btn btn-default" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
 
 <% end %>
 
 
-  </div>
+
 </div>

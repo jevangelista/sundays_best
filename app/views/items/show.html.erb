@@ -1,10 +1,12 @@
-<h1><%= @item.name %></h1>
-	<div class="panel-body">
-		<%= image_tag @item.item_img.url(:medium) %>
-	</div>
-	<div class="panel-footer">
-		<p><%= @item.purchase_link %></p>
-	</div>
-	<h1> Hello! </h1>
+<div class="container">
+	<h1><%= @item.name %></h1>
+		<div class="panel-body">
+			<%= image_tag @item.item_img.url(:medium) %>
+		</div>
+		<div class="panel-footer">
+			<%=link_to "Purchase Item", "http://#{@item.purchase_link}" %>
+		</div>
 
-<%= link_to "Back",  ootds_path %>
+
+	<%= link_to "Back",  ootds_path, class: "btn btn-default" %>
+</div>

@@ -1,42 +1,44 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class="sign-in-page">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-    <h1>Sign Up</h1>
+      <h1 class="sign-in-font">Sign Up</h1>
 
-    <%= form_for @user, url: users_path, html: { multipart: true } do |f| %>
-      <div>
-        <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
-      </div>
-      <div>
-        <%= f.text_field :username, placeholder: "@username", class: "form-control" %>
-      </div>
-      <div>
-        <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
-      </div>
-      <div>
-        <%= f.text_field :gender, placeholder: "Gender", class: "form-control" %>
-      </div>
-      <div>
-        <%= f.text_field :city, placeholder: "City", class: "form-control" %>
-      </div>
-       <div>
-        <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-      </div>
-      <div>
-        <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %>
-      </div>
+      <%= form_for @user, url: users_path, html: { multipart: true } do |f| %>
+        <div>
+          <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+        </div>
+        <div>
+          <%= f.text_field :username, placeholder: "@username", class: "form-control" %>
+        </div>
+        <div>
+          <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+        </div>
+        <div>
+          <%= f.text_field :gender, placeholder: "Gender", class: "form-control" %>
+        </div>
+        <div>
+          <%= f.text_field :city, placeholder: "City", class: "form-control" %>
+        </div>
+         <div>
+          <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+        </div>
+        <div>
+          <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %>
+        </div>
 
-      <h3>Upload User Photo: </h3>
-      <div>
-         <%= f.file_field :user_img, class: "form-control" %>
-      </div>
+        <h3 class="sign-in-font">Upload User Photo: </h3>
+        <div>
+           <%= f.file_field :user_img, class: "form-control" %>
+        </div>
 
-      <br>
+        <br>
 
-      <div>
-      <%= f.submit "Sign Up", class: "btn btn-primary" %>
-      </div>
-    <% end %> 
+        <div>
+        <%= f.submit "Sign Up", class: "btn btn-primary" %>
+        </div>
+      <% end %> 
 
+    </div>
   </div>
 </div>

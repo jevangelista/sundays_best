@@ -1,50 +1,57 @@
-<div>
-<%= link_to "New OOTD",  new_ootd_path, class: "btn btn-default btn-primary" %>
-<%= link_to "OOTD Gallery",  ootds_path, class: "btn btn-default btn-primary" %>
-</div>
-
-
-<h1> Welcome, <%= @user.name %>!  </h1>
-<div>
-	<%= image_tag @user.user_img.url(:medium) %>
-</div>
-<div>
-  Username: <%= @user.username %>  <br/>
-  City: <%= @user.city %> <br/>
-  Member Since: <%= @user.created_at %> 
-</div>
-
-<div>
-	<img src="<%= @user.user_image %>">
-</div>
-
-<h2>Your Contributed OOTDS </h2>
-<br><br>
-<div id="pins" class="transitions-enabled">
-	<% @ootds.each do |ootd| %>
-		<div class="box panel panel-default">
-			<%= image_tag ootd.ootd_img.url(:medium) %>
-			<div class="panel-body">
-				<%= link_to ootd.trend, "/ootds/#{ootd.id}"%> <br/>
-				<%= ootd.caption %> 
+<div class="container">
+    <div class="span3 well">
+        <center>
+        <h2> Welcome, <%= @user.name %>!  
+        </h2><%= image_tag @user.user_img.url(:medium) %>
+        
+			
+			<div>
+			  Username: <%= @user.username %>  <br/>
+			  City: <%= @user.city %> <br/>
+			  Member Since: <%= @user.created_at %> 
 			</div>
-		</div>
-	<% end %>
+
+			<div>
+			<%= link_to "New OOTD",  new_ootd_path, class: "btn btn-default btn-primary" %>
+			<%= link_to "OOTD Gallery",  ootds_path, class: "btn btn-default btn-primary" %>
+			<%= link_to "Favorites",  favorites_path, class: "btn btn-default btn-primary" %>
+			</div>
+
+		</center>
+    </div>
+  
+
+
+
+
+<div class="container">
+	<h3 class="show-user-font">Your Contributed OOTDS </h3>
+	<br><br>
+	<div id="pins" class="transitions-enabled">
+		<% @ootds.each do |ootd| %>
+			<div class="box panel panel-default">
+				<%= image_tag ootd.ootd_img.url(:medium) %>
+				<div class="panel-body">
+					<%= link_to ootd.caption, "/ootds/#{ootd.id}"%> <br/>
+					<%= ootd.trend %> 
+				</div>
+			</div>
+		<% end %>
+	</div>
 </div>
 
-<h2>Your Generated Outfits </h2>
+	<script>
+		$(function(){
 
-<script>
-	$(function(){
+		  var $container = $('#pins');
 
-	  var $container = $('#pins');
+		  $container.imagesLoaded(function(){
+		    $container.masonry({
+		      itemSelector: '.box',
+		      isFitWidth: true
+		    });
+		  });
+		 });
 
-	  $container.imagesLoaded(function(){
-	    $container.masonry({
-	      itemSelector: '.box',
-	      isFitWidth: true
-	    });
-	  });
-	 });
-
-</script>
+	</script>
+</div>

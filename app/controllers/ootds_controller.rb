@@ -1,5 +1,5 @@
 class OotdsController < ApplicationController
-	before_action :find_ootd, only: [:show, :edit, :update, :destroy, :upvote]
+	before_action :find_ootd, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@ootds = Ootd.all
@@ -8,13 +8,16 @@ class OotdsController < ApplicationController
 		  	else
 		    @ootds = Ootd.all
 	 	end
+	end
 
-	 	  if params[:tag]
-		    @ootds = Ootd.tagged_with(params[:tag])
-		  else
-		    @ootds = Ootd.all
-		  end
-
+	def tag
+		@ootds = Ootd.all
+ 	 	if params[:tag]
+	    	@ootds = Ootd.tagged_with(params[:tag])
+	  	else
+	    	@ootds = Ootd.all
+	  	end
+	  	render :index
 	end
 
 	def show
@@ -49,6 +52,7 @@ class OotdsController < ApplicationController
 	end
 
 	def destroy
+		@ootd.ootd_items.destroy_all
 		@ootd.destroy
 		redirect_to "/ootds"
 	end
