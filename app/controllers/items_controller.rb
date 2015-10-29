@@ -54,6 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def favorite_index
+    @favorites = current_user.favorites
   end
 
 

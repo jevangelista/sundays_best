@@ -1,1 +1,14 @@
 <h1>Favorites page </h1>
+
+<div id="pins" class="transitions-enabled">
+	<% @favorites.each do |favorite| %>
+		<div class="box panel panel-default">
+			<%= favorite.item_category %>
+			<div class="panel-body">
+				<%= favorite.name %> <br>
+				<%= image_tag favorite.item_img.url(:medium) %>
+				
+			</div>
+		</div>
+	<% end %>
+</div>
