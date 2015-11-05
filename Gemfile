@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 #new additions here
 # adding bootstrap sass
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
