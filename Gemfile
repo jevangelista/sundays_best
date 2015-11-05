@@ -9,6 +9,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
 gem 'simple_form', '~> 3.2'
 #paperclip gem for photo upload
 gem "paperclip", "~> 4.3"
+#adding amazon s3 gem for storage
+gem 'aws-sdk'
 #adding masonry for gallery layout
 gem 'masonry-rails', '~> 0.2.4'
 #including for masonry
