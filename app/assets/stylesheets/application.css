@@ -19,18 +19,82 @@
 html {
     height: 100%;
     background-size: cover;
+
 }
 
 body {
 	padding-top:50px;
 }
 
+.splash-page {
+   background: url("https://images.unsplash.com/photo-1444920275954-9dddec6b714e?ixlib=rb-0.3.5&q=80&fm=jpg&s=0518a8f7ba6f21373aee138e9998744d")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  height: 900px;
+
+}
+
+.splash-font {
+  color: white;
+
+}
+
+h1.splash-font {
+  font-size: 75px;
+  font-family: 'Delius Swash Caps', cursive;
+
+
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
 .btn {
   margin: 2px;
 }
 
+.btn-button-name, .btn-button-name:link, .btn-button-name:visited {
+    background-color: transparent;
+    border-radius: 0;
+    color: white;
+    border: 2px solid white;
+}
+.btn-button-name:active, .btn-button-name:hover {
+    background-color: #D3D3D3;
+    color: #ffffff
+}
+
+.btn-button-name.btn-lg {
+    border: 3px solid white;
+}
+.btn-button-name.btn-sm {
+    border: 2px solid white;
+}  
+.btn-button-name.btn-xs {
+    border: 1px solid white;
+}  
+
 h1.ootd-gallery {
 	text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  font-family: 'Delius Swash Caps', cursive;
+}
+
+h3.search-font {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Delius Swash Caps', cursive;
 }
 
 .heart-icon {
@@ -74,7 +138,7 @@ h1.ootd-gallery {
 }
 
 .new-edit-ootd-form {
-   background: url("https://images.unsplash.com/photo-1416339698674-4f118dd3388b?ixlib=rb-0.3.5&q=80&fm=jpg&s=dc1002f24f59f9c010b4fae52168ffa9")no-repeat center center fixed;
+   background: url("https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-0.3.5&q=80&fm=jpg&s=998149dafaf22db92eb7dcec6acd0adc")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -147,3 +211,5 @@ h1.ootd-gallery {
     
     line-height:1.3;
 }
+
+

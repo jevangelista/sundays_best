@@ -3,7 +3,7 @@
 
 		<div class="panel panel-primary">
 			<div class="container search-bar ">
-			  <h3> Search OOTD's by Trend </h3>
+			  <h3 class="search-font"> Search OOTD's by Trend </h3>
 			  <%= form_tag(ootds_path, :method => "get", class: "navbar-form", id: "search-form") do %>
 			    <div class="input-append form-group">
 			      <%= text_field_tag :search, params[:search], placeholder: "Search Trends", class: "form-control" %>
