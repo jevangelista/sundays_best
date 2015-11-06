@@ -29,11 +29,21 @@
 		</div>
 
 
-		<div class="ootd-item-panels">
-			<div class="panel-body">
-				<div class="row">
-					<h3 style="text-align: center" class="google-font"> Shop Similar Items</h3>
-					<div id="pins" class="transitions-enabled">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <div class="panel panel-primary">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Shop Similar Items
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body similar-items-panel" >
+        <div class="row">
+					<h3 style="text-align: center" class="google-font"> Similar Items</h3>
+						<div id="pins" class="transitions-enabled">
 						<% @ootd_items.each do |ootd_item| %>
 
 							<div class="box panel panel-default" >
@@ -48,11 +58,17 @@
 							</div>
 						<% end %>
 					</div>
-				</div>
-			</div>
+
+
 		</div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
 
-
+		
 	<div>
 </div>
 
