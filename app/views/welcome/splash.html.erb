@@ -6,8 +6,8 @@
 
        <% if current_user %>
         <%= link_to "OOTD Gallery", ootds_path, method: "get",  class: "btn btn-button-name btn-lg"  %>
+         <%= link_to "Favorites", favorites_path, method: "get", class: "btn btn-button-name btn-lg" %>
           <%= link_to "Profile", current_user, method: "get", class: "btn btn-button-name btn-lg" %>
-          <%= link_to "Favorites", favorites_path, method: "get", class: "btn btn-button-name btn-lg" %>
 
       <% else %>
          <%= link_to "Sign Up", new_user_path, method: "get",  class: "btn btn-button-name btn-lg"  %>

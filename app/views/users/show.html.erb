@@ -1,31 +1,44 @@
-<div class="container">
-    <div class="span3 well">
-        <center>
-        <h2> Welcome, <%= @user.name %>!  
-        </h2><%= image_tag @user.user_img.url(:medium) %>
-        
-			
-			<div>
-			  Username: <%= @user.username %>  <br/>
-			  City: <%= @user.city %> <br/>
-			  Member Since: <%= @user.created_at %> 
-			</div>
+<div class="container ">
+  <div class="row">
 
-			<div>
-			<%= link_to "New OOTD",  new_ootd_path, class: "btn btn-default btn-primary" %>
-			<%= link_to "OOTD Gallery",  ootds_path, class: "btn btn-default btn-primary" %>
-			<%= link_to "Favorites",  favorites_path, class: "btn btn-default btn-primary" %>
-			</div>
+    
+      <div class="panel panel-default ">
+			<div class="panel-body">
+              		<div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <h2 class="profile-font">Welcome, <%= @user.name %>!</h2>
+                            <p><strong>Username: </strong> <%= @user.username %> </p>
+                            <p><strong>City: </strong> <%= @user.city %> </p>
+                            <p><strong>Member Since: </strong> <%= @user.created_at %> </p>
+                        </div><!--/col-->          
+                        <div class="col-xs-12 col-sm-4 text-center">
+                                <%= image_tag @user.user_img.url(:medium), class: "center-block img-circle img-responsive" %>
+                               	<br><br>
+                        </div><!--/col-->
+                        <div class="col-xs-12 col-sm-4">
+                    		<%= link_to "New OOTD",  new_ootd_path, class: "btn btn-success btn-block" %>
+                        </div><!--/col-->
+                        <div class="col-xs-12 col-sm-4">
+                			<%= link_to "OOTD Gallery",  ootds_path, class: "btn btn-info btn-block" %>
+                        </div><!--/col-->
+                        <div class="col-xs-12 col-sm-4">
+                        	<%= link_to "Favorites",  favorites_path, class: "btn btn-primary btn-block" %>
+                        </div><!--/col-->
+              		</div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
 
-		</center>
-    </div>
+    
+    
+
+  </div>
+</div>
+
   
 
 
-
-
 <div class="container">
-	<h3 class="show-user-font">Your Contributed OOTDS </h3>
+	<h1 class="profile-font">Your Contributed OOTDS </h1>
 	<br><br>
 	<div id="pins" class="transitions-enabled">
 		<% @ootds.each do |ootd| %>
