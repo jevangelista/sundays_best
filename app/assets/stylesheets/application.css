@@ -94,6 +94,7 @@ h1.profile-font {
 }
 .btn-button-name.btn-sm {
     border: 2px solid white;
+    margin-top: 8px;
 }  
 .btn-button-name.btn-xs {
     border: 1px solid white;
@@ -238,4 +239,6 @@ h3.search-font {
   height: 600px;
 }
 
-
+.navbar-buttons-position {
+  margin-top: 50px;
+}
