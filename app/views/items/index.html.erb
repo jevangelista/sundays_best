@@ -13,6 +13,11 @@
 
 	  var $container = $('#pins');
 
+	  $("img").load(function() {
+        $container.masonry(); //this tweak is a fix on chrome and safari browser
+      });      
+
+
 	  $container.imagesLoaded(function(){
 	    $container.masonry({
 	      itemSelector: '.box',
